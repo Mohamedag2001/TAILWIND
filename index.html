@@ -7,58 +7,88 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-orange-50">
-    <nav class="flex justify-between items-center p-6">
-        <div class="flex items-center space-x-2">
-            <div class="relative flex items-center justify-center w-7 h-7 bg-blue-400 rotate-45">
-                <span class="absolute text-sm font-bold text-gray-900 -rotate-45">Sk</span> 
+    <nav class="bg-white shadow-md p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <div class="relative flex items-center justify-center w-7 h-7 bg-blue-400 rotate-45">
+                    <span class="absolute text-sm font-bold text-gray-900 -rotate-45">Sk</span> 
+                </div>
+                <span class="text-2xl font-bold text-gray-900">illine</span>  
             </div>
-            <span class="text-2xl font-bold text-gray-900">illine</span>  
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-6 text-gray-700">
+                <a href="#" class="hover:text-orange-500">Home</a>
+                <a href="#" class="hover:text-orange-500">Careers</a>
+                <a href="#" class="hover:text-orange-500">Blog</a>
+                <a href="#" class="hover:text-orange-500">About Us</a>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="hidden md:flex space-x-4">
+                <button class="border px-6 py-2 rounded-full bg-white shadow">Login</button>
+                <button class="bg-orange-500 text-white px-6 py-2 rounded-full">Sign Up</button>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
+                ☰
+            </button>
         </div>
-        <ul class="hidden md:flex space-x-6 text-gray-700">
-            <li><a href="#" class="hover:text-orange-500">Home</a></li>
-            <li><a href="#" class="hover:text-orange-500">Careers</a></li>
-            <li><a href="#" class="hover:text-orange-500">Blog</a></li>
-            <li><a href="#" class="hover:text-orange-500">About Us</a></li>
-        </ul>
-        <div class="space-x-4">
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col items-center space-y-4 mt-4 text-gray-700">
+            <a href="#" class="hover:text-orange-500">Home</a>
+            <a href="#" class="hover:text-orange-500">Careers</a>
+            <a href="#" class="hover:text-orange-500">Blog</a>
+            <a href="#" class="hover:text-orange-500">About Us</a>
             <button class="border px-6 py-2 rounded-full bg-white shadow">Login</button>
             <button class="bg-orange-500 text-white px-6 py-2 rounded-full">Sign Up</button>
         </div>
     </nav>
 
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
     <header class="flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-10 md:py-20 relative">
-        <div class="max-w-lg">
-            <h1 class="text-5xl font-bold">
-                <span class="text-orange-500">Studying</span> 
-                <span class="text-indigo-900">Online is now much easier</span>
-            </h1>
-            <p class="text-gray-600 my-4 text-lg">Skilline is an interesting platform that will teach you in a more interactive way</p>
-            <div class="flex items-center space-x-4">
-                <button class="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold">Join for free</button>
-                <div class="flex items-center space-x-2 cursor-pointer">
-                    <div class="bg-white p-3 rounded-full shadow-md">
-                        <span class="text-blue-500">▶</span>
-                    </div>
-                    <span>Watch how it works</span>
-                </div>
-            </div>
-        </div>
-        <div class="relative mt-10 md:mt-0">
-            <img src="asset 0.png" alt="Student" class="w-98 py-0">
-            <div class="absolute top-4 left-4 bg-white p-2 rounded-lg shadow-md flex items-center space-x-4">
-                <img src="asset 1.svg" alt="img">
-            </div>
-            <div class="absolute bottom-6 left-6 bg-white p-1 rounded-lg shadow-md">
-               <img class="w-30" src="asset 2.svg" alt="photo">
-            </div>
-            <div class="absolute bottom-6 right-6 bg-white p-6 rounded-lg shadow-md flex items-center">
-               <img class="w-28" src="asset 3.svg" alt="image">
-            </div>
-            <div class="absolute top-6 right-6 bg-white p-6 rounded-lg shadow-md flex items-center">
-                📊
-            </div>
-        </div>
-    </header>
+      <div class="max-w-lg">
+          <h1 class="text-5xl font-bold">
+              <span class="text-orange-500">Studying</span> 
+              <span class="text-indigo-900">Online is now much easier</span>
+          </h1>
+          <p class="text-gray-600 my-4 text-lg">Skilline is an interesting platform that will teach you in a more interactive way</p>
+          <div class="flex items-center space-x-4">
+              <button class="bg-orange-500 text-white px-6 py-3 rounded-full font-semibold">Join for free</button>
+              <div class="flex items-center space-x-2 cursor-pointer">
+                  <div class="bg-white p-3 rounded-full shadow-md">
+                      <span class="text-blue-500">▶</span>
+                  </div>
+                  <span>Watch how it works</span>
+              </div>
+          </div>
+      </div>
+      
+      <div class="relative w-full max-w-sm mx-auto md:max-w-md lg:max-w-lg">
+          <img src="asset 0.png" alt="Student" class="w-full">
+          
+          <div class="absolute top-4 left-4 bg-white p-2 rounded-lg shadow-md hidden sm:block">
+              <img src="asset 1.svg" alt="icon">
+          </div>
+          <div class="absolute bottom-6 left-6 bg-white p-1 rounded-lg shadow-md hidden sm:block">
+              <img class="w-20" src="asset 2.svg" alt="icon">
+          </div>
+          <div class="absolute bottom-6 right-6 bg-white p-6 rounded-lg shadow-md hidden sm:block">
+              <img class="w-20" src="asset 3.svg" alt="icon">
+          </div>
+          <div class="absolute top-6 right-6 bg-white p-6 rounded-lg shadow-md hidden sm:block">
+              📊
+          </div>
+      </div>
+  </header>
     <section class="py-12 bg-white text-center">
         <h3 class="text-gray-500 text-sm uppercase tracking-wide">
             Trusted by 5,000+ Companies Worldwide
@@ -79,7 +109,7 @@
                 <span class="text-gray-800">All-In-One</span>
                 <span class="text-orange-500">Cloud Software.</span>
               </h2>
-              <p className="mt-2 text-gray-600">
+              <p class="mt-2 text-gray-600">
                 SkilLine is one powerful online software suite that combines all the
                 tools needed to run a successful school or office.
               </p>
@@ -206,6 +236,56 @@
                           <div class="absolute bottom-0 right-0 w-6 h-6 bg-orange-500 rounded-lg -mb-3 -mr-3"></div>
                         </div>
                       </div>
+                      <div class="flex items-center justify-between px-16 py-10 bg-white">
+                        <div class="max-w-md">
+                          <h2 class="text-4xl font-bold">
+                            <span class="text-orange-500">Tools</span> 
+                            <span class="text-blue-900">For Teachers And Learners</span>
+                          </h2>
+                          <p class="mt-4 text-gray-600">
+                            Class has a dynamic set of teaching tools built to be deployed and used during class. Teachers can handout assignments in real-time for students to complete and submit.
+                          </p>
+                        </div>
+                        <div class="relative">
+                          <img src="asset 14.png" alt="Student" class="relative z-10 w-80">
+                          <div class="absolute top-0 left-8 w-32 h-32 bg-red-200 rounded-full -z-10"></div>
+                          <div class="absolute inset-0 flex items-center justify-center -z-10">
+                            <div class="grid grid-cols-6 gap-4">
+                              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                     
+                          <section class="flex flex-col lg:flex-row items-center gap-8 px-6 lg:px-20 py-12">
+                            <div class="lg:w-1/2 text-center lg:text-left">
+                              <p class="uppercase text-gray-400 font-semibold tracking-wide">Testimonial</p>
+                              <h2 class="text-3xl font-bold text-indigo-900 mt-2">What They Say?</h2>
+                              <p class="text-gray-500 mt-4">
+                                Skilline has got more than 100k positive ratings from our users around the world.
+                                Some of the students and teachers were greatly helped by Skilline.
+                              </p>
+                              <p class="text-gray-500 mt-2">Are you too? Please give your assessment</p>
+                              
+                              <button class="mt-6 flex items-center gap-2 border-2 border-orange-400 text-orange-500 px-6 py-3 rounded-full hover:bg-orange-100 transition">
+                                Write your assessment →
+                              </button>
+                            </div>
+                            <div class="lg:w-1/2 flex flex-col items-center relative">
+                              <div class="relative">
+                                <img 
+                                  src="asset 19.png" 
+                                  alt="Smiling person" 
+                                  class="rounded-2xl shadow-lg"
+                                />
+                            </div>
+                          </section>
+                      
                           <footer class="bg-gray-900 text-white text-center py-10 h-full">
                             <div class="max-w-3xl mx-auto px-4">
                               <div class="flex items-center justify-center space-x-3">
